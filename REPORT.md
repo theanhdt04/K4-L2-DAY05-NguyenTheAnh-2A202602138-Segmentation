@@ -1,6 +1,6 @@
 # Báo cáo Day 5 — điền trực tiếp trong fork của bạn
 
-**Cách dùng:** Bản cần nộp đã có sẵn ở [`REPORT.md`](../REPORT.md) trong thư mục gốc của fork; mở file đó và điền vào chỗ còn thiếu. Giữ nguyên bốn mục và bảng để coach đọc bài nhanh.
+**Trạng thái:** Báo cáo đã được điền theo các ZIP hiện có và kết quả tự đánh giá đã chạy; giữ nguyên bốn mục và bảng để coach đọc bài nhanh.
 
 - Mã học viên theo lớp: 2A202602138
 - Ngày / CVAT local: 17/09/2026
@@ -46,7 +46,7 @@ Không tự điền điểm nếu chưa có phản hồi từ người chấm. �
 - Quy tắc và hành động sửa: Tôi đối chiếu lại `classes.json`; label/category ngoài danh sách phải được sửa trong CVAT, sau đó bấm Save và export lại đúng format. Không sửa trực tiếp JSON/PNG trong ZIP.
 - Sau sửa đã Save và export lại chưa? Chưa export lại sau khi phát hiện lỗi; các ZIP tier hiện tại vẫn báo lỗi class/category khi chạy script QC.
 
-Nếu bạn **đã xem Summary tự đánh giá trên GitHub Actions hoặc tự chạy script**, ghi ngắn một kết quả liên quan lỗi vừa sửa (ví dụ task, metric trước/sau nếu có): Script QC đã chạy và báo lỗi class/category như trên; chưa có điểm. Notebook không tính IoU, PQ hoặc điểm khi chưa có reference. Scorecard ba tier tối đa **82**, không phải điểm cuối trên 100. Không tự ghi PASS/top 3/bonus; người phụ trách xác nhận theo tiêu chí lớp. Không đưa file ground truth vào fork.
+Nếu bạn **đã xem Summary tự đánh giá trên GitHub Actions hoặc tự chạy script**, ghi ngắn một kết quả liên quan lỗi vừa sửa (ví dụ task, metric trước/sau nếu có): Script QC đã chạy và báo lỗi class/category như trên. Sau đó tôi chạy `python3 scoring/scorecard.py --group tiers --dir submissions --out reports/tiers` thành công; scorecard hiện tại đạt **34.5 / 82**, gồm `easy_semantic` **15.6 / 20** (metric `0.751`), `medium_instance` **6.3 / 32** (metric `0.488`) và `hard_panoptic` **12.6 / 30** (metric `0.389`). Kết quả này được ghi tại `reports/tiers/SCORECARD.md` và `reports/tiers/scorecard.json`; `review_flags` không có. Đây là điểm tự đánh giá của ba tier theo reference hiện có, không phải điểm cuối trên 100; sáu checkpoint chưa được tính trong lệnh này. Không tự ghi PASS/top 3/bonus; người phụ trách xác nhận theo tiêu chí lớp. Không đưa file ground truth vào fork.
 
 ## 4. Ba ca chưa chắc hoặc đã cân nhắc
 
